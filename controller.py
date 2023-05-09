@@ -255,10 +255,10 @@ class Controller(QMainWindow, Ui_MainWindow):
     def press1(self):
         #adds 1 to display
         newNum = self.DisplayLabel.text()
-        if newNum == '0' or newNum == 'Error':
+        if newNum == '0':
             self.DisplayLabel.setText('1')
-            self.EquationLabel.setText('')
-        elif newNum[0] == 'A':
+
+        elif newNum[0] == 'A' or newNum == 'Error':
             self.DisplayLabel.setText('1')
             self.EquationLabel.setText('')
         else:
@@ -267,10 +267,10 @@ class Controller(QMainWindow, Ui_MainWindow):
     def press2(self):
         #adds 2 to display
         newNum = self.DisplayLabel.text()
-        if newNum == '0' or newNum == 'Error':
+        if newNum == '0':
             self.DisplayLabel.setText('2')
-            self.EquationLabel.setText('')
-        elif newNum[0] == 'A':
+
+        elif newNum[0] == 'A' or newNum == 'Error':
             self.DisplayLabel.setText('2')
             self.EquationLabel.setText('')
         else:
@@ -279,10 +279,9 @@ class Controller(QMainWindow, Ui_MainWindow):
     def press3(self):
         #adds 3 to display
         newNum = self.DisplayLabel.text()
-        if newNum == '0' or newNum == 'Error':
+        if newNum == '0':
             self.DisplayLabel.setText('3')
-            self.EquationLabel.setText('')
-        elif newNum[0] == 'A':
+        elif newNum[0] == 'A' or newNum == 'Error':
             self.DisplayLabel.setText('3')
             self.EquationLabel.setText('')
         else:
@@ -291,10 +290,9 @@ class Controller(QMainWindow, Ui_MainWindow):
     def press4(self):
         #adds 4 to display
         newNum = self.DisplayLabel.text()
-        if newNum == '0' or newNum == 'Error':
+        if newNum == '0':
             self.DisplayLabel.setText('4')
-            self.EquationLabel.setText('')
-        elif newNum[0] == 'A':
+        elif newNum[0] == 'A' or newNum == 'Error':
             self.DisplayLabel.setText('4')
             self.EquationLabel.setText('')
         else:
@@ -303,10 +301,9 @@ class Controller(QMainWindow, Ui_MainWindow):
     def press5(self):
         #adds 5 to display
         newNum = self.DisplayLabel.text()
-        if newNum == '0' or newNum == 'Error':
+        if newNum == '0':
             self.DisplayLabel.setText('5')
-            self.EquationLabel.setText('')
-        elif newNum[0] == 'A':
+        elif newNum[0] == 'A' or newNum == 'Error':
             self.DisplayLabel.setText('5')
             self.EquationLabel.setText('')
         else:
@@ -315,10 +312,9 @@ class Controller(QMainWindow, Ui_MainWindow):
     def press6(self):
         #adds 6 to display
         newNum = self.DisplayLabel.text()
-        if newNum == '0' or newNum == 'Error':
+        if newNum == '0':
             self.DisplayLabel.setText('6')
-            self.EquationLabel.setText('')
-        elif newNum[0] == 'A':
+        elif newNum[0] == 'A' or newNum == 'Error':
             self.DisplayLabel.setText('6')
             self.EquationLabel.setText('')
         else:
@@ -329,8 +325,7 @@ class Controller(QMainWindow, Ui_MainWindow):
         newNum = self.DisplayLabel.text()
         if newNum == '0' or newNum == 'Error':
             self.DisplayLabel.setText('7')
-            self.EquationLabel.setText('')
-        elif newNum[0] == 'A':
+        elif newNum[0] == 'A' or newNum == 'Error':
             self.DisplayLabel.setText('7')
             self.EquationLabel.setText('')
         else:
@@ -339,10 +334,9 @@ class Controller(QMainWindow, Ui_MainWindow):
     def press8(self):
         #adds 8 to display
         newNum = self.DisplayLabel.text()
-        if newNum == '0' or newNum == 'Error':
+        if newNum == '0':
             self.DisplayLabel.setText('8')
-            self.EquationLabel.setText('')
-        elif newNum[0] == 'A':
+        elif newNum[0] == 'A' or newNum == 'Error':
             self.DisplayLabel.setText('8')
             self.EquationLabel.setText('')
         else:
@@ -351,10 +345,9 @@ class Controller(QMainWindow, Ui_MainWindow):
     def press9(self):
         #adds 9 to display
         newNum = self.DisplayLabel.text()
-        if newNum == '0' or newNum == 'Error':
+        if newNum == '0':
             self.DisplayLabel.setText('9')
-            self.EquationLabel.setText('')
-        elif newNum[0] == 'A':
+        elif newNum[0] == 'A' or newNum == 'Error':
             self.DisplayLabel.setText('9')
             self.EquationLabel.setText('')
         else:
