@@ -85,7 +85,7 @@ class Controller(QMainWindow, Ui_MainWindow):
         if self.Mode == 0:
             equation = self.EquationLabel.text()
             newNum = self.DisplayLabel.text()
-            if newNum == 'Error':
+            if newNum == 'Error' or newNum[0] == 'A':
                 pass
             else:
                 self.EquationLabel.setText(equation + newNum)
@@ -100,34 +100,46 @@ class Controller(QMainWindow, Ui_MainWindow):
         elif self.Mode == 1:
             if self.radioCircle.isChecked():
                 radius = self.area1Label.text()
-                try:
-                    solved = math.pi * (float(radius) ** 2)
-                    self.DisplayLabel.setText(str(solved))
-                except:
+                if float(radius) == 0:
                     self.DisplayLabel.setText("Error")
+                else:
+                    try:
+                        solved = math.pi * (float(radius) ** 2)
+                        self.DisplayLabel.setText("Area=" + str(solved))
+                    except:
+                        self.DisplayLabel.setText("Error")
             elif self.radioSquare.isChecked():
                 side = self.area1Label.text()
-                try:
-                    solved = float(side) ** 2
-                    self.DisplayLabel.setText(str(solved))
-                except:
+                if float(side) == 0:
                     self.DisplayLabel.setText("Error")
+                else:
+                    try:
+                        solved = float(side) ** 2
+                        self.DisplayLabel.setText("Area=" + str(solved))
+                    except:
+                        self.DisplayLabel.setText("Error")
             elif self.radioRectangle.isChecked():
                 length = self.area1Label.text()
                 width = self.area2Label.text()
-                try:
-                    solved = float(length) * float(width)
-                    self.DisplayLabel.setText(str(solved))
-                except:
+                if float(length) == 0 or float(width) == 0:
                     self.DisplayLabel.setText("Error")
+                else:
+                    try:
+                        solved = float(length) * float(width)
+                        self.DisplayLabel.setText("Area=" + str(solved))
+                    except:
+                        self.DisplayLabel.setText("Error")
             elif self.radioTriangle.isChecked():
                 base = self.area1Label.text()
                 height = self.area2Label.text()
-                try:
-                    solved = .5 * float(base) * float(height)
-                    self.DisplayLabel.setText(str(solved))
-                except:
+                if float(base) == 0 or float(height) == 0:
                     self.DisplayLabel.setText("Error")
+                else:
+                    try:
+                        solved = .5 * float(base) * float(height)
+                        self.DisplayLabel.setText("Area=" + str(solved))
+                    except:
+                        self.DisplayLabel.setText("Error")
             else:
                 pass
 
@@ -350,12 +362,18 @@ class Controller(QMainWindow, Ui_MainWindow):
 
     def pressArea1Submit(self):
         newNum = self.DisplayLabel.text()
-        self.area1Label.setText(newNum)
+        if newNum != "Error" and newNum[0] != 'A':
+            self.area1Label.setText(newNum)
+        elif newNum[0] == 'A':
+            self.area1Label.setText(newNum[5:])
         self.DisplayLabel.setText('0')
 
     def pressArea2Submit(self):
         newNum = self.DisplayLabel.text()
-        self.area2Label.setText(newNum)
+        if newNum != "Error" and newNum[0] != 'A':
+            self.area2Label.setText(newNum)
+        elif newNum[0] == 'A':
+            self.area2Label.setText(newNum[5:])
         self.DisplayLabel.setText('0')
 
 
